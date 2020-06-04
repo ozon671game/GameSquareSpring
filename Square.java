@@ -15,6 +15,8 @@ public class Square
     boolean down = false;
     private final static int maxSguare = 10;// max кол-во квадратов
     private static Square[] square;
+    private static ClassPathXmlApplicationContext context;
+
 
     private  Square ()
     {
@@ -58,8 +60,7 @@ public class Square
 
     public static  Square [] getSguare()
     {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
+        context=Main.getContext();
 
 
         if(square==null)

@@ -21,8 +21,7 @@ public class GameSguare extends JPanel implements ActionListener,Game  {  //им
 
     public  void initGame()//начало игры
     {
-        //ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-       //  square [3]= context.getBean("square", Square.class);
+
         setBackground(Color.black);//цвет поля
         square=Square.getSguare();
         timer = new Timer(10, this);
