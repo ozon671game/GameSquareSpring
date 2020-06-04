@@ -8,24 +8,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class GameSguare extends JPanel implements ActionListener,Game  {  //имплементирую интерфейс
     private final int size = 310;     //размер поля
-    private Timer timer;            //  таймер
-    private Square [] square;     //    массив квадратов
+    private  Timer timer;            //  таймер
+    public    Square [] square;     //    массив квадратов
 
 
-    public GameSguare()// конструктор класса GameField
+    public GameSguare(ClassPathXmlApplicationContext context)// конструктор класса GameField
     {
-
-        initGame();
-
-    }
-
-    public  void initGame()//начало игры
-    {
-
-        setBackground(Color.black);//цвет поля
-        square=Square.getSguare();
+        square=Square.getSguare(context);
         timer = new Timer(10, this);
         timer.start();                          // запускаю таймер
+        setBackground(Color.black);//цвет поля
     }
 
     @Override

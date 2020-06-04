@@ -58,10 +58,8 @@ public class Square
 
     }
 
-    public static  Square [] getSguare()
+    public static  Square [] getSguare(ClassPathXmlApplicationContext context)
     {
-        context=Main.getContext();
-
 
         if(square==null)
         {

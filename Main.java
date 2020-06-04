@@ -6,23 +6,11 @@ public class Main
 
     public static void main(String[] args)
     {
-        context=getContext();
+        context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
         Window mw = context.getBean("mw", Window.class);
-        mw.addWindow();
+        mw.addWindow(context);
         context.close();
     }
-
-    public static  ClassPathXmlApplicationContext getContext()
-    {
-
-        if(context==null)
-        {
-             context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        }
-
-        return context;
-    }
-
-
 
 }
